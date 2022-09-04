@@ -1,0 +1,17 @@
+{
+  "name": "api-node",
+  "version": "0.0.1",
+  "description": "Node API without any fancy library",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "find * | entr -crs 'node app.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "api"
+  ],
+  "author": "Juan Manuel Espinosa",
+  "license": "ISC"
+}
