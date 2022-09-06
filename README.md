@@ -13,6 +13,7 @@ Keep it in the backend. I'll just consume the API using `curl` and
 ## Goals
 
 - Only `node` modules (no express or third party)
+- Handling errors
 - Implement a database connection
   - Choose Relational or No Relational
 - Authentication and Authorization

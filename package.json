@@ -2,10 +2,10 @@
   "name": "api-node",
   "version": "0.0.1",
   "description": "Node API without any fancy library",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "find * | entr -crs 'node app.js'",
+    "start": "node ./src/app.js",
+    "dev": "find * | entr -crs 'node ./src/app.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
