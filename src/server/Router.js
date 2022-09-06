@@ -1,5 +1,3 @@
-const { NOT_FOUND } = require('./status')
-
 class Router {
   routes = {
     GET: new Map(),
@@ -15,15 +13,13 @@ class Router {
   processRequest = async (req, res) => {
     let { method, url } = req
     if (this.routes[method].has(url)) {
-      return this.routes[method].get(url)(req, res)
-    } else {
-      return res
-        .status('NOT_FOUND')
-        .json({
-          ok: false,
-          error: { code: NOT_FOUND, message: 'Not found' }
-        })
+      try {
+        return await this.routes[method].get(url)(req, res)
+      } catch (e) {
+        return res.error('SERVER_ERROR', e)
+      }
     }
+    return res.error('NOT_FOUND')
   }
 }
 

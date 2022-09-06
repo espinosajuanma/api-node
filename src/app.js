@@ -10,5 +10,9 @@ app.get('/ping', (req, res) => {
   res.send('pong')
 })
 
+app.get('/error', (req, res) => {
+  throw 'This is a generic error'
+})
+
 app.listen(PORT)
 console.log(`Listening on Port ${PORT}`)

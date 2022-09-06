@@ -17,6 +17,16 @@ class Response extends ServerResponse {
     this.setHeader('Content-Type', 'application/json')
     this.end(JSON.stringify(data))
   }
+
+  error = (code, message) => {
+    let error = status[code]
+    if (message) error.message = message
+    this.status(code)
+    this.json({
+      ok: false,
+      error: error
+    })
+  }
 }
 
 module.exports = Response

@@ -1,7 +1,6 @@
 const http = require('node:http')
 const Response = require('./Response')
 const Router = require('./Router')
-const status = require('./status')
 
 const server = http.createServer({
   ServerResponse: Response
